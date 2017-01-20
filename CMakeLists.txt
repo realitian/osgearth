@@ -79,21 +79,20 @@ OPTION(OSG_BUILD_PLATFORM_IPHONE_SIMULATOR "Enable IPhoneSDK Simulator support" 
 IF(OSG_BUILD_PLATFORM_IPHONE OR OSG_BUILD_PLATFORM_IPHONE_SIMULATOR)
   
   #you need to manually set the default sdk version here
-  SET (IPHONE_SDKVER "6.1")
   #the below is taken from ogre, it states the gcc stuff needs to happen before PROJECT() is called. I've no clue if we even need it
   # Force gcc <= 4.2 on iPhone
   include(CMakeForceCompiler)
-  CMAKE_FORCE_C_COMPILER(llvm-gcc-4.2 GNU)
-  CMAKE_FORCE_CXX_COMPILER(llvm-gcc-4.2 GNU)
+#CMAKE_FORCE_C_COMPILER(llvm-g++ GNU)
+#CMAKE_FORCE_CXX_COMPILER(llvm-g++ GNU)
   SET(GCC_THUMB_SUPPORT NO)
 
         #set either the device sdk or the simulator sdk. Can't find away to separate these in the same project
         IF(OSG_BUILD_PLATFORM_IPHONE)
             SET (IPHONE_DEVROOT "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer")
-            SET (IPHONE_SDKROOT "${IPHONE_DEVROOT}/SDKs/iPhoneOS${IPHONE_SDKVER}.sdk")
+            SET (IPHONE_SDKROOT "${IPHONE_DEVROOT}/SDKs/iPhoneOS.sdk")
         ELSE()
             SET (IPHONE_DEVROOT "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer")
-            SET (IPHONE_SDKROOT "${IPHONE_DEVROOT}/SDKs/iPhoneSimulator${IPHONE_SDKVER}.sdk")
+            SET (IPHONE_SDKROOT "${IPHONE_DEVROOT}/SDKs/iPhoneSimulator.sdk")
         ENDIF()
 ENDIF ()
 # IPHONE_PORT@tom
