@@ -1,0 +1,11 @@
+cmake ./ -G Xcode -DOSG_BUILD_PLATFORM_IPHONE:BOOL=ON \
+-DOSG_DIR:PATH="/Volumes/Work/sandbox/osg-ios/relmin/" \
+-DCURL_INCLUDE_DIR:PATH="/Volumes/Work/sandbox/osm/3rdParty/curl-ios-device/include" \
+-DCURL_LIBRARY:PATH="/Volumes/Work/sandbox/osm/3rdParty/curl-ios-device/lib/libcurl.a" \
+-DGDAL_INCLUDE_DIR:PATH="/Volumes/Work/sandbox/osm/3rdParty/gdal-ios-device/include" \
+-DGDAL_LIBRARY:PATH="/Volumes/Work/sandbox/osm/3rdParty/gdal-ios-device/lib/libgdal.a" \
+-DGEOS_INCLUDE_DIR:PATH="/Volumes/Work/sandbox/osm/3rdParty/geos-ios-device/include/source/headers" \
+-DGEOS_LIBRARY:PATH="/Volumes/Work/sandbox/osm/3rdParty/geos-ios-device/lib/libGEOS_3.2.a" \
+-DOSGEARTH_BUILD_APPLICATION_BUNDLES:BOOL=OFF \
+-DDYNAMIC_OSGEARTH:BOOL=OFF \
+-DOSGEARTH_USE_QT:BOOL=OF
